@@ -2,11 +2,15 @@
 const express = require('express')
 const PORT = process.env.PORT
 const app = express()
+const router = require('./router/movies')
 
 // create app listener
 app.listen(PORT, () => {
     console.log(`Server is listening on http://localhost:${PORT}`)
 })
+
+// define base url
+app.use('/api/movies', router)
 
 // create homepage route
 app.get('/', (req, res) => {

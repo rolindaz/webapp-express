@@ -14,4 +14,9 @@ function index(req, res) {
         console.log(result);
         res.json(result)
     })
-} 
+}
+
+// export route functions
+module.exports = {
+    index
+}
