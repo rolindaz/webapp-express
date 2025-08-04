@@ -1,6 +1,7 @@
 // import express
 const express = require('express')
 const PORT = process.env.PORT
+const cors = require('cors')
 const app = express()
 const router = require('./router/movies')
 
@@ -8,6 +9,8 @@ const router = require('./router/movies')
 app.listen(PORT, () => {
     console.log(`Server is listening on http://localhost:${PORT}`)
 })
+
+app.use(cors())
 
 // define base url
 app.use('/api/movies', router)
